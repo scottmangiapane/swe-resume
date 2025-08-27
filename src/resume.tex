@@ -1,0 +1,178 @@
+%%%% preamble
+
+\title{Resume - John Doe}
+\author{John Doe}
+\date{2025}
+
+%%%% setup
+
+\documentclass[11pt]{article}
+
+\usepackage{enumitem}
+\usepackage[T1]{fontenc}
+\usepackage[left=1.5cm,right=1.5cm,top=1.6cm,bottom=1.6cm]{geometry}
+\usepackage[pdfusetitle]{hyperref}
+\usepackage{multicol}
+\usepackage[sfdefault,condensed]{roboto}
+\usepackage[fontsize=11]{scrextend}
+\usepackage{xcolor}
+
+\definecolor{black}{RGB}{0, 0, 0}
+\definecolor{blue}{RGB}{25, 118, 210}
+\definecolor{gray}{RGB}{97, 97, 97}
+
+\pdfgentounicode=1
+
+%%%% macros
+
+\newcommand{\Chapter}[1]{%
+    \begingroup
+    \color{black}
+    \huge
+    \textbf{#1}
+    \par
+    \vspace{0.5ex}
+    \endgroup
+}
+\newcommand{\Section}[1]{%
+  \begingroup
+  \color{blue}
+  \Large
+  \textbf{#1}\par
+  \rule[1.5ex]{\linewidth}{0.4pt}\par
+  \vspace{-1.5ex}
+  \vspace{0.5ex}
+  \endgroup
+}
+\newcommand{\Subsection}[3]{%
+    \begingroup
+    \color{black}
+    \begin{itemize}[label=\textopenbullet, leftmargin=1em]
+        \item \textbf{#1}{#2}\hfill#3
+    \end{itemize}
+    \vspace{0.5ex}
+    \endgroup
+}
+\newcommand{\Subsubsection}[2]{%
+    \begingroup
+    \itshape
+    \leftskip=1em
+    #1\hfill#2
+    \par
+    \vspace{0.5ex}
+    \endgroup
+}
+\newcommand{\Content}{%
+    \begingroup
+    \par
+    \vspace{1ex}
+    \endgroup
+}
+\newcommand{\ContentList}[1]{%
+    \begingroup
+    \begin{itemize}[label=\textbullet, leftmargin=3em]
+    #1
+    \end{itemize}
+    \par
+    \vspace{1ex}
+    \endgroup
+}
+\newcommand{\ContentListNarrow}[1]{%
+    \begingroup
+    \begin{itemize}[label=\textbullet, leftmargin=1em]
+    #1
+    \end{itemize}
+    \par
+    \vspace{1ex}
+    \endgroup
+}
+\newcommand{\Header}[2]{%
+    \begingroup
+    \setlength{\tabcolsep}{0pt}
+    \noindent\makebox[\linewidth]{%
+        \begin{tabular}[c]{l}
+            #1
+        \end{tabular}%
+        \hfill
+        \color{black}
+        \begin{tabular}[c]{r}
+            #2
+        \end{tabular}%
+    }
+    \par
+    \vspace{2ex}
+    \endgroup
+}
+
+\newcommand{\Item}[2]{%
+    \item \color{black}{#1}: \color{gray}{#2}
+}
+\newcommand{\InlineBold}[1]{%
+    \begingroup
+    \color{black}\textbf{#1}
+    \endgroup
+}
+
+%%%% document
+
+\begin{document}
+\color{gray}
+\pagestyle{empty}
+\raggedbottom
+\raggedright
+\setlength{\multicolsep}{0pt}
+\setlist[itemize]{leftmargin=2em,nosep}
+
+\Header{
+    \Chapter{John Doe}\\
+    Full-Stack Software Engineer in Anytown, USA\\
+}{
+    johndoe@example.com\\
+    (123) 456-7890\\
+    example.com\\
+}
+
+\Section{Experience}
+\Subsection{Company A}{}{Anytown, USA}
+\Subsubsection{Software Engineer}{Jan 2022 – Present}
+\ContentList{
+    \Item{Project Management}{Lorem ipsum dolor sit amet, consectetur adipiscing elit. Fusce sit amet augue vitae arcu ullamcorper fermentum. Vestibulum ante ipsum primis in faucibus orci luctus et ultrices posuere cubilia curae; Morbi vel eros sit amet nulla eleifend cursus.}
+    \Item{Backend Development}{Integer ac risus nec leo fermentum congue. Donec vitae mi sed arcu dignissim varius. Suspendisse potenti. Curabitur ut lacus eget nunc bibendum feugiat. Pellentesque habitant morbi tristique senectus et netus et malesuada fames ac turpis egestas.}
+    \Item{Frontend Development}{Phasellus at ligula eget lectus euismod suscipit. Aliquam erat volutpat. Maecenas euismod lorem in velit convallis, id efficitur erat pulvinar. Donec finibus dolor at nunc pretium, at tincidunt velit fermentum.}
+}
+
+\Subsection{Company B}{}{Anycity, USA}
+\Subsubsection{Software Engineer II}{Jun 2019 – Dec 2021}
+\ContentList{
+    \Item{System Integration}{Lorem ipsum dolor sit amet, consectetur adipiscing elit. Vivamus in magna ac odio pretium volutpat. Aenean auctor, sapien sed mattis varius, lorem ipsum malesuada nunc, vel vehicula justo justo non purus.}
+    \Item{Automation}{Curabitur a ante ut purus vulputate scelerisque. Donec fermentum urna in tincidunt sollicitudin. Proin dictum risus vitae lacus posuere, at porttitor purus cursus. Integer non turpis id elit lacinia sodales.}
+    \Item{Security}{Sed eu justo vel sapien imperdiet bibendum. Fusce vitae odio quis metus ultricies fermentum. Morbi sed turpis in ex scelerisque facilisis. Quisque id erat sit amet justo faucibus ultrices.}
+    \Item{Data Management}{Praesent vitae libero nec lorem volutpat sagittis. Ut luctus felis sed sapien ultricies, nec malesuada felis lacinia. Donec in justo a lectus tempor vulputate.}
+    \Item{Authentication}{Aliquam erat volutpat. Curabitur euismod, metus eget dapibus ullamcorper, sapien justo luctus erat, nec blandit libero nunc vel purus.}
+    \Item{On-Call Support}{Vivamus sed ligula vel libero tincidunt commodo. Proin mollis neque in sapien fermentum, vel tincidunt leo faucibus.}
+}
+
+\Subsubsection{Software Engineer I}{Jan 2018 – May 2019}
+\ContentList{
+    \Item{API Development}{Lorem ipsum dolor sit amet, consectetur adipiscing elit. Vestibulum ante ipsum primis in faucibus orci luctus et ultrices posuere cubilia curae; Praesent et libero id nunc finibus vehicula.}
+    \Item{Monitoring}{Maecenas quis justo vitae ligula mollis sollicitudin. Sed non dolor ut nisi fermentum dictum. Pellentesque habitant morbi tristique senectus et netus et malesuada fames ac turpis egestas.}
+}
+
+\Subsubsection{Intern}{Summers 2016 – 2017}
+\ContentList{
+    \Item{Support Tasks}{Lorem ipsum dolor sit amet, consectetur adipiscing elit. Curabitur eget justo sit amet odio sollicitudin euismod. Integer facilisis orci ut augue feugiat, nec porttitor magna tempus.}
+}
+
+\Section{Education}
+\Subsection{University of Somewhere}{}{Somecity, USA}
+\Subsubsection{Bachelor of Science in Computer Science}{Aug 2014 - May 2018}
+\Content
+
+\Section{Skills}
+\ContentListNarrow{
+    \Item{Programming Languages}{Lorem, Ipsum, Dolor, Sit, Amet, Consectetur, Adipiscing, Elit, Sed, Do, Eiusmod}
+    \Item{Frameworks \& Tools}{Lorem, Ipsum, Dolor, Sit, Amet, Consectetur, Adipiscing, Elit, Sed, Do, Eiusmod}
+    \Item{Development Concepts}{Lorem ipsum dolor sit amet, consectetur adipiscing elit. Integer ac neque sit amet odio dignissim porta. Sed quis metus at metus vehicula aliquam.}
+}
+
+\end{document}

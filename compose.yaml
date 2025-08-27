@@ -1,0 +1,7 @@
+services:
+  latex:
+    build: .
+    command: /watch.sh
+    volumes:
+      - ./src:/data
+    working_dir: /data
